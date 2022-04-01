@@ -1,0 +1,196 @@
+@font-face {
+  font-family: Calibre;
+  src: url(../fonts/Calibre-Regular.woff2) format('woff2'), url(../fonts/Calibre-Regular.woff) format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto
+}
+
+@font-face {
+  font-family: Calibre;
+  src: url(../fonts/Calibre-Medium.woff2) format('woff2'), url(../fonts/Calibre-Medium.woff) format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto
+}
+
+@font-face {
+  font-family: Calibre;
+  src: url(../fonts/Calibre-Semibold.woff2) format('woff2'), url(../fonts/Calibre-Semibold.woff) format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: auto
+}
+
+@font-face {
+  font-family: Calibre;
+  src: url(../fonts/Calibre-RegularItalic.woff2) format('woff2'), url(../fonts/Calibre-RegularItalic.woff) format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto
+}
+
+@font-face {
+  font-family: Calibre;
+  src: url(../fonts/Calibre-MediumItalic.woff2) format('woff2'), url(../fonts/Calibre-MediumItalic.woff) format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: auto
+}
+
+@font-face {
+  font-family: Calibre;
+  src: url(../fonts/Calibre-SemiboldItalic.woff2) format('woff2'), url(../fonts/Calibre-SemiboldItalic.woff) format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: auto
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url(../fonts/SFMono-Regular.woff2) format('woff2'), url(../fonts/SFMono-Regular.woff) format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url(../fonts/SFMono-Semibold.woff2) format('woff2'), url(../fonts/SFMono-Semibold.woff) format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: auto
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url(../fonts/SFMono-RegularItalic.woff2) format('woff2'), url(../fonts/SFMono-RegularItalic-3a20a00dfdeb4ba538473fa7bf625cbd.woff) format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url(../fonts/SFMono-SemiboldItalic.woff2) format('woff2'), url(../fonts/SFMono-SemiboldItalic.woff) format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: auto
+}
+
+:root {
+  --accent: 0, 183, 194;
+  --secondary-accent: 15, 76, 117;
+  --dark-background: 8, 8, 8;
+  --background: 13, 13, 13;
+  --light-background: 35, 35, 35;
+  --lightest-background: 55, 55, 55;
+  --dark-background-transparency: rgba(var(--dark-background), 0.8);
+  --accent-tint: rgba(var(--accent), 0.05);
+  --lightest-slate: 204, 214, 246;
+  --light-slate: 168, 178, 209;
+  --slate: 136, 146, 176;
+  --dark-slate: 84, 101, 129;
+  --font-sans: "Calibre", "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  --fz-xxs: 12px;
+  --fz-xs: 13px;
+  --fz-sm: 14px;
+  --fz-md: 16px;
+  --fz-lg: 18px;
+  --fz-xl: 20px;
+  --fz-xxl: 22px;
+  --fz-subheading: 32px;
+  --fz-heading: 72px;
+  --border-radius: 10px
+}
+
+html {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden
+}
+
+*, :after, :before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit
+}
+
+::-moz-selection {
+  background-color: rgb(var(--accent))
+}
+
+::selection {
+  background-color: rgb(var(--accent))
+}
+
+:focus {
+  outline: 2px dashed rgb(var(--accent));
+  outline-offset: 3px
+}
+
+:focus:not(:focus-visible) {
+  outline: 0;
+  outline-offset: 0
+}
+
+:focus-visible {
+  outline: 2px dashed rgb(var(--accent));
+  outline-offset: 3px
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(var(--background));
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-sans);
+  font-size: var(--fz-xl);
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1.3
+}
+
+button {
+  color: rgb(var(--slate));
+  background-color: inherit;
+  border-radius: var(--border-radius);
+  border: 2px solid rgb(var(--accent));
+  text-decoration: none;
+  cursor: pointer;
+  outline-width: 0;
+  -webkit-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out
+}
+
+button:hover {
+  background-color: var(--accent-tint);
+  color: rgb(var(--accent))
+}
+
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+ul {
+  padding: 0
+}
+
+footer {
+  font-family: var(--font-mono);
+  font-size: var(--fz-xxs);
+  color: rgb(var(--dark-slate));
+  text-align: center;
+  min-height: 35px
+}
