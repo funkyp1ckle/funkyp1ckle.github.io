@@ -1024,13 +1024,12 @@ img:hover {
     transform: rotate(-45deg)
   }
 
-  .mainContent {
-    padding: 0 50px
-  }
-}
-@media only screen and (max-width:768px) {
   .selfieWrapper {
     width: 250px;
     height: 250px
+  }
+  
+  .mainContent {
+    padding: 0 50px
   }
 }
