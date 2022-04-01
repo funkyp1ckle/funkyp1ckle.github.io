@@ -267,6 +267,7 @@ body {
   -webkit-transition: margin-top .25s;
   -o-transition: margin-top .25s;
   transition: margin-top .25s;
+  overflow-x: hidden;
   overflow-y: scroll
 }
 
