@@ -1,6 +1,6 @@
 :root {
   --tab-count: 6;
-  --tab-height: 42px
+  --tab-height: 42px;
 }
 
 body {
@@ -267,8 +267,6 @@ body {
   -webkit-transition: margin-top .25s;
   -o-transition: margin-top .25s;
   transition: margin-top .25s;
-  overflow-x: hidden;
-  overflow-y: scroll
 }
 
 .mainContent h5 {
