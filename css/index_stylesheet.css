@@ -99,7 +99,7 @@ body {
 .navLinks li:before {
   position: relative;
   counter-increment: sectionLink;
-  content: "0"counter(sectionLink) ".";
+  content: "0" counter(sectionLink) ".";
   margin-right: 3px;
   color: rgb(var(--accent))
 }
@@ -325,7 +325,7 @@ body {
 .mainContent h3:before {
   position: relative;
   counter-increment: section;
-  content: "0"counter(section) ".";
+  content: "0" counter(section) ".";
   margin-right: 10px;
   color: rgb(var(--secondary-accent));
   font-size: clamp(26px, 5vw, var(--fz-subheading));
