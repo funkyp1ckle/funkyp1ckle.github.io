@@ -21,8 +21,10 @@ function initTabbedMenu() {
 expandBtn.addEventListener("click", function() {
   if (!expandBtn.checked) {
     navBar.style.height = "70px";
+    document.body.classList.remove("expanded");
   } else {
     navBar.style.height = "350px";
+    document.body.classList.add("expanded");
   }
 });
 
@@ -30,6 +32,7 @@ window.addEventListener("resize", function reset(event) {
   if (window.innerWidth > 768) {
     expandBtn.checked = false;
     navBar.style.height = "70px";
+    document.body.classList.remove("expanded");
   }
 });
 
