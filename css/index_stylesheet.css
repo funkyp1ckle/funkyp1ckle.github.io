@@ -7,6 +7,10 @@ body {
   counter-reset: section sectionLink
 }
 
+#expandBtn {
+  display: none;
+}
+
 .navBar {
   background-color: var(--dark-background-transparency);
   position: sticky;
@@ -87,9 +91,9 @@ body {
   height: auto;
   padding-top: 0;
   color: rgb(var(--slate));
-  -webkit-transition: background .5s ease-in-out, color .5s ease-in-out;
-  -o-transition: background .5s ease-in-out, color .5s ease-in-out;
-  transition: background .5s ease-in-out, color .5s ease-in-out
+  -webkit-transition: background-color .5s ease-in-out, color .5s ease-in-out;
+  -o-transition: background-color .5s ease-in-out, color .5s ease-in-out;
+  transition: background-color .5s ease-in-out, color .5s ease-in-out
 }
 
 .navLinks li:before {
@@ -998,7 +1002,7 @@ img:hover {
     width: 40%
   }
 
-  .expand.open span:nth-child(1) {
+  #expandBtn:checked+.expand span:nth-child(1) {
     width: 100%;
     top: 50%;
     -webkit-transform: rotate(45deg);
@@ -1006,7 +1010,7 @@ img:hover {
     transform: rotate(45deg)
   }
 
-  .expand.open span:nth-child(2) {
+  #expandBtn:checked+.expand span:nth-child(2) {
     width: 0%;
     -o-transition: opacity .3s;
     transition: opacity .3s;
@@ -1014,12 +1018,27 @@ img:hover {
     opacity: 1
   }
 
-  .expand.open span:nth-child(3) {
+  #expandBtn:checked+.expand span:nth-child(3) {
     width: 100%;
     top: 50%;
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg)
+  }
+
+  #expandBtn:checked ~ .navLinks {
+    display: block;
+    height: 80%;
+  }
+
+  #expandBtn:checked ~ .navLinks ol {
+    display: block;
+    height: 100%;
+  }
+
+  #expandBtn:checked ~ .navLinks ol li {
+    display: flex;
+    height: 25%;
   }
 
   .selfieWrapper {
