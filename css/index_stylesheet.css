@@ -1,6 +1,8 @@
 :root {
   --tab-count: 6;
   --tab-height: 42px;
+  --navBar-height: 70px;
+  --expanded-navBar-height: 350px;
 }
 
 body {
@@ -19,7 +21,7 @@ body {
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   padding-bottom: 0;
-  height: 70px;
+  height: var(--navBar-height);
   -webkit-transition: background-color .25s ease-in-out;
   -o-transition: background-color .25s ease-in-out;
   transition: background-color .25s ease-in-out
@@ -72,6 +74,10 @@ body {
   align-items: center
 }
 
+.navLinks a {
+  margin: 0 20px 0 0;
+}
+
 .navLinks li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,15 +91,10 @@ body {
   align-items: center;
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
-  margin-right: 20px;
   list-style: decimal-leading-zero;
   cursor: pointer;
   height: auto;
-  padding-top: 0;
   color: rgb(var(--slate));
-  -webkit-transition: background-color .5s ease-in-out, color .5s ease-in-out;
-  -o-transition: background-color .5s ease-in-out, color .5s ease-in-out;
-  transition: background-color .5s ease-in-out, color .5s ease-in-out
 }
 
 .navLinks li:before {
@@ -104,13 +105,12 @@ body {
   color: rgb(var(--accent))
 }
 
-.navLinks li:last-child {
+.navLinks a:last-child {
   margin-right: 20px
 }
 
 .navLinks li:hover {
   color: rgb(var(--accent));
-  background-color: var(--accent-tint)
 }
 
 .navBar button {
@@ -189,10 +189,12 @@ body {
 }
 
 .platform-links a {
-  padding: 10px
+  padding: 5px;
+  margin: 10px
 }
 
 .platform-links svg {
+  display: block;
   width: 20px;
   height: 20px
 }
@@ -264,9 +266,9 @@ body {
 .mainContent {
   margin: 0 auto;
   width: 100%;
-  height: calc(100% - 70px);
+  height: calc(100% - var(--navBar-height));
   max-width: 1600px;
-  min-height: calc(100% - 70px);
+  min-height: calc(100% - var(--navBar-height));
   padding: 0 150px;
   -webkit-transition: margin-top .25s;
   -o-transition: margin-top .25s;
@@ -359,19 +361,11 @@ body {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  min-height: calc(100vh - 70px)
-}
-
-.mainContent section:before {
-  display: block;
-  content: " ";
-  height: 70px;
-  margin-top: -70px;
-  visibility: hidden
+  min-height: calc(100vh - var(--navBar-height));
+  padding-top: var(--navBar-height);
 }
 
 .intro {
-  padding-top: 35px;
   padding-bottom: 150px;
   max-width: 1000px
 }
@@ -703,8 +697,9 @@ img:hover {
 
 .projectPicWrapper {
   width: 70%;
-  aspect-ratio: 16/10;
+  height: 400px;
   position: relative;
+  box-shadow: 0 20px 30px -30px black;
   z-index: 1
 }
 
@@ -852,45 +847,14 @@ img:hover {
   }
 }
 
-@media only screen and (max-width:1000px) {
-  .projectPicWrapper {
-    width: 100%
-  }
-
-  .projectPicWrapper .tint {
-    background: rgb(var(--light-background));
-    pointer-events: none;
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none
-  }
-
-  .projectPicWrapper .tint img {
-    -webkit-filter: none;
-    filter: none
-  }
-
-  .projectContainer .projectDescription {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    text-align: left;
-    padding: 40px
-  }
-
-  .projectDescription p {
-    background-color: inherit;
-    border-radius: 0;
-    padding: 0;
-    width: 100%
-  }
-
-  .projectContainer:nth-of-type(odd) .projectDescription p {
-    right: 0
-  }
-}
-
 @media only screen and (max-width:768px) {
+  .noTransition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+  }
+
   .right-side {
     display: none
   }
@@ -918,7 +882,7 @@ img:hover {
     position: relative;
     width: 100%;
     left: 0;
-    top: 70px;
+    top: var(--navBar-height);
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
@@ -943,18 +907,25 @@ img:hover {
     display: none
   }
 
+  .navLinks a {
+    display: none;
+    height: 0;
+    border-bottom: 1px solid var(--accent-tint);
+    padding-left: 2%;
+    margin: 0;
+    -webkit-transition: background-color .5s ease-in-out, color .5s ease-in-out;
+    -o-transition: background-color .5s ease-in-out, color .5s ease-in-out;
+    transition: background-color .5s ease-in-out, color .5s ease-in-out
+  }
+
+  .navLinks a:hover {
+    background-color: var(--accent-tint)		
+  }
+
   .navLinks li {
     display: none;
     height: 0;
     list-style-position: inside;
-    border-bottom: 1px solid var(--accent-tint);
-    padding-left: 2%;
-    margin-right: 0
-  }
-
-  .navLinks li:last-child {
-    border-bottom: none;
-    margin-right: 0
   }
 
   .expand {
@@ -1036,9 +1007,15 @@ img:hover {
     height: 100%;
   }
 
-  #expandBtn:checked ~ .navLinks ol li {
+  #expandBtn:checked ~ .navLinks ol a {
+    margin: 0;
     display: flex;
-    height: 25%;
+    height: 25%
+  }
+
+  #expandBtn:checked ~ .navLinks ol a li {
+    display: flex;
+    height: 100%
   }
 
   .selfieWrapper {
@@ -1048,6 +1025,43 @@ img:hover {
 
   .mainContent {
     padding: 0 50px
+  }
+
+  .projectPicWrapper {
+    box-shadow: 0 10px 30px -30px black;
+    width: 100%
+  }
+
+  .projectPicWrapper .tint {
+    background: rgb(var(--light-background));
+    pointer-events: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none
+  }
+
+  .projectPicWrapper .tint img {
+    -webkit-filter: none;
+    filter: none
+  }
+
+  .projectContainer .projectDescription {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: left;
+    padding: 40px
+  }
+
+  .projectDescription p {
+    background-color: inherit;
+    border-radius: 0;
+    padding: 0;
+    width: 100%
+  }
+
+  .projectContainer:nth-of-type(odd) .projectDescription p {
+    right: 0
   }
 }
 
@@ -1064,10 +1078,10 @@ img:hover {
   }
 
   .tabbed-pane-inner label {
-    font-size: large;
     justify-content: center;
-    width: calc(100% / var(--tab-count));
     padding: 0 5px 0 5px;
+    width: calc(100% / var(--tab-count));
+    font-size: small
   }
 
   .border {
@@ -1082,32 +1096,32 @@ img:hover {
     height: 3px;
   }
 
-  .exp input#tab1:checked~.slider {
+  .exp input#tab1:checked ~ .slider {
     top: var(--tab-height);
     left: calc(0 * (100% / var(--tab-count)))
   }
 
-  .exp input#tab2:checked~.slider {
+  .exp input#tab2:checked ~ .slider {
     top: var(--tab-height);
     left: calc(1 * (100% / var(--tab-count)))
   }
 
-  .exp input#tab3:checked~.slider {
+  .exp input#tab3:checked ~ .slider {
     top: var(--tab-height);
     left: calc(2 * (100% / var(--tab-count)))
   }
 
-  .exp input#tab4:checked~.slider {
+  .exp input#tab4:checked ~ .slider {
     top: var(--tab-height);
     left: calc(3 * (100% / var(--tab-count)))
   }
 
-  .exp input#tab5:checked~.slider {
+  .exp input#tab5:checked ~ .slider {
     top: var(--tab-height);
     left: calc(4 * (100% / var(--tab-count)))
   }
 
-  .exp input#tab6:checked~.slider {
+  .exp input#tab6:checked ~ .slider {
     top: var(--tab-height);
     left: calc(5 * (100% / var(--tab-count)))
   }

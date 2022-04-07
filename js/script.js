@@ -1,6 +1,8 @@
 var navBar = document.querySelector(".navBar");
 var expandBtn = document.getElementById("expandBtn");
 
+var navLinks = document.getElementById("navLinks").getElementsByTagName("ol")[0].getElementsByTagName("a");
+
 function initTabbedMenu() {
   var tabbedMenu = document.querySelector(".tabbed-pane");
   var tabbedPanel = tabbedMenu.querySelector(".tabbed-pane-inner").getElementsByTagName("input");
@@ -18,22 +20,36 @@ function initTabbedMenu() {
   }
 }
 
-expandBtn.addEventListener("click", function() {
+expandBtn.addEventListener("click", function expand() {
   if (!expandBtn.checked) {
-    navBar.style.height = "70px";
-    document.body.classList.remove("expanded");
+    navBar.style.height = window.getComputedStyle(document.documentElement).getPropertyValue("--navBar-height");
   } else {
-    navBar.style.height = "350px";
-    document.body.classList.add("expanded");
+    navBar.style.height = window.getComputedStyle(document.documentElement).getPropertyValue("--expanded-navBar-height");
   }
 });
 
 window.addEventListener("resize", function reset(event) {
   if (window.innerWidth > 768) {
     expandBtn.checked = false;
-    navBar.style.height = "70px";
-    document.body.classList.remove("expanded");
+    navBar.style.height = window.getComputedStyle(document.documentElement).getPropertyValue("--navBar-height");
   }
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        if(window.innerWidth <= 768 && expandBtn.checked) {
+          navBar.classList.add("noTransition");
+          navBar.style.height = window.getComputedStyle(document.documentElement).getPropertyValue("--navBar-height");
+          navBar.offsetHeight;
+          navBar.classList.remove("noTransition");
+          expandBtn.checked = false;
+        }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
 });
 
 initTabbedMenu();

@@ -84,6 +84,7 @@
   --dark-background:8, 8, 8;
   --background:13, 13, 13;
   --light-background:35, 35, 35;
+  --lighter-background:40, 40, 40;
   --lightest-background:55, 55, 55;
   --dark-background-transparency:rgba(var(--dark-background), 0.8);
   --accent-tint:rgba(var(--accent), 0.05);
@@ -121,14 +122,6 @@ html {
   box-sizing: inherit
 }
 
-::-moz-selection {
-  background-color: rgb(var(--accent))
-}
-
-::selection {
-  background-color: rgb(var(--accent))
-}
-
 :focus {
   outline: 2px dashed rgb(var(--accent));
   outline-offset: 3px
@@ -145,31 +138,27 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 1vw;
+  height: 1vh;
 }
 
 ::-webkit-scrollbar-button {
-  height: 0;
   width: 0;
+  height: 0;
   display: none
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: rgb(var(--dark-slate))
+  background-color: rgb(var(--light-background))
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(var(--slate));
+  background-color: rgb(var(--lighter-background));
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background-color: rgb(var(--light-slate))
+  background-color: rgb(var(--lightest-background))
 }
 
 body {
@@ -187,16 +176,10 @@ body {
   line-height: 1.3;
   overflow-x: hidden;
   overflow-y: scroll;
-}
-
-body::-webkit-scrollbar-button:start:decrement {
-  height: 70px;
-  display: block;
-  background-color: var(--dark-background-transparency);
-}
-
-body.expanded::-webkit-scrollbar-button:start:decrement {
-  height: 350px;
+  -webkit-user-select: none;        
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 button {
