@@ -708,7 +708,7 @@ img:hover {
 
 .projectPicWrapper {
   width: 70%;
-  height: 400px;
+  aspect-ratio: 16 / 10;
   position: relative;
   -webkit-box-shadow: 0 20px 30px -30px black;
           box-shadow: 0 20px 30px -30px black;
