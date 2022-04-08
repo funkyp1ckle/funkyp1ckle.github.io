@@ -555,7 +555,7 @@ img:hover {
   padding: 0 20px 0 20px;
   -webkit-transition: color 0.2s ease-in-out;
   -o-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .exp label:hover {
