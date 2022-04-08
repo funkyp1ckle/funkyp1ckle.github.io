@@ -282,7 +282,7 @@ body {
   transition: margin-top 0.25s;
 }
 
-.mainContent h5 {
+.mainContent h4 {
   color: rgb(var(--accent));
   font-family: var(--font-mono);
   font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
@@ -290,11 +290,11 @@ body {
   margin-top: 0;
 }
 
-.mainContent h5::-moz-selection {
+.mainContent h4::-moz-selection {
   color: rgb(var(--light-slate));
 }
 
-.mainContent h5::selection {
+.mainContent h4::selection {
   color: rgb(var(--light-slate));
 }
 
@@ -661,7 +661,7 @@ img:hover {
   width: 100%;
 }
 
-.job h5 {
+.job h4 {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -723,7 +723,7 @@ img:hover {
   margin: auto 0;
 }
 
-.projectDescription h5 {
+.projectDescription h4 {
   display: inline-block;
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
