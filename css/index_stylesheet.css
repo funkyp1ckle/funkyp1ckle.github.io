@@ -95,6 +95,9 @@ body {
   cursor: pointer;
   height: auto;
   color: rgb(var(--slate));
+  -webkit-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .navLinks li:before {
@@ -109,7 +112,7 @@ body {
   margin-right: 20px;
 }
 
-.navLinks li:hover {
+.navLinks a:hover li {
   color: rgb(var(--accent));
 }
 
@@ -178,6 +181,7 @@ body {
   transition: color 0.2s ease-in-out, -webkit-transform 0.2s linear;
   -o-transition: color 0.2s ease-in-out, transform 0.2s linear;
   transition: color 0.2s ease-in-out, transform 0.2s linear;
+  transition: color 0.2s ease-in-out, transform 0.2s linear, -webkit-transform 0.2s linear;
   transition: color 0.2s ease-in-out, transform 0.2s linear,
     -webkit-transform 0.2s linear;
 }
@@ -245,6 +249,7 @@ body {
   transition: color 0.2s ease-in-out, -webkit-transform 0.2s linear;
   -o-transition: color 0.2s ease-in-out, transform 0.2s linear;
   transition: color 0.2s ease-in-out, transform 0.2s linear;
+  transition: color 0.2s ease-in-out, transform 0.2s linear, -webkit-transform 0.2s linear;
   transition: color 0.2s ease-in-out, transform 0.2s linear,
     -webkit-transform 0.2s linear;
 }
@@ -520,6 +525,8 @@ img:hover {
   background-color: rgb(var(--accent));
   -webkit-transition: top 0.2s ease-in-out;
   -o-transition: top 0.2s ease-in-out;
+  -webkit-transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
+  -o-transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
   transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
 }
 
@@ -703,7 +710,8 @@ img:hover {
   width: 70%;
   height: 400px;
   position: relative;
-  box-shadow: 0 20px 30px -30px black;
+  -webkit-box-shadow: 0 20px 30px -30px black;
+          box-shadow: 0 20px 30px -30px black;
   z-index: 1;
 }
 
@@ -854,7 +862,6 @@ img:hover {
 @media only screen and (max-width: 768px) {
   .noTransition {
     -webkit-transition: none !important;
-    -moz-transition: none !important;
     -o-transition: none !important;
     transition: none !important;
   }
@@ -920,6 +927,7 @@ img:hover {
     -webkit-transition: background-color 0.5s ease-in-out,
       color 0.5s ease-in-out;
     -o-transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    -webkit-transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
   }
 
@@ -1014,11 +1022,15 @@ img:hover {
 
   #expandBtn:checked ~ .navLinks ol a {
     margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 25%;
   }
 
   #expandBtn:checked ~ .navLinks ol a li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
   }
@@ -1033,7 +1045,8 @@ img:hover {
   }
 
   .projectPicWrapper {
-    box-shadow: 0 10px 30px -30px black;
+    -webkit-box-shadow: 0 10px 30px -30px black;
+            box-shadow: 0 10px 30px -30px black;
     width: 100%;
   }
 
@@ -1078,12 +1091,16 @@ img:hover {
   }
 
   .tabbed-pane-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
 
   .tabbed-pane-inner label {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 0 5px 0 5px;
     width: calc(100% / var(--tab-count));
     font-size: small;
