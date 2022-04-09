@@ -282,7 +282,7 @@ body {
   transition: margin-top 0.25s;
 }
 
-.mainContent h4 {
+.mainContent h5 {
   color: rgb(var(--accent));
   font-family: var(--font-mono);
   font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
@@ -290,11 +290,11 @@ body {
   margin-top: 0;
 }
 
-.mainContent h4::-moz-selection {
+.mainContent h5::-moz-selection {
   color: rgb(var(--light-slate));
 }
 
-.mainContent h4::selection {
+.mainContent h5::selection {
   color: rgb(var(--light-slate));
 }
 
@@ -409,29 +409,28 @@ h2 {
   display: grid;
   -ms-grid-columns: 50% 10px 50%;
   grid-template-columns: repeat(2, 50%);
-  gap: 10px 10px;
+  gap: 0 10px;
+  padding: 0;
   overflow: hidden;
+  list-style: none;
 }
 
 .mainContent ul li {
   color: rgb(var(--secondary-accent));
-  list-style: none;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  line-height: 30px;
 }
 
 .mainContent ul li:before {
-  position: relative;
+  position: absolute;
+  display: block;
+  left: 0px;
   content: "\25B9";
   font-size: 30px;
-  margin-top: -3px;
-  margin-left: -7px;
   color: rgb(var(--accent));
 }
 
@@ -661,7 +660,7 @@ img:hover {
   width: 100%;
 }
 
-.job h4 {
+.job h5 {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -708,7 +707,7 @@ img:hover {
 
 .projectPicWrapper {
   width: 70%;
-  aspect-ratio: 16 / 10;
+  height: 400px;
   position: relative;
   -webkit-box-shadow: 0 20px 30px -30px black;
           box-shadow: 0 20px 30px -30px black;
@@ -723,7 +722,7 @@ img:hover {
   margin: auto 0;
 }
 
-.projectDescription h4 {
+.projectDescription h5 {
   display: inline-block;
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
