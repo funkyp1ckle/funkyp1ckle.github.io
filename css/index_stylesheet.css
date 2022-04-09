@@ -378,6 +378,21 @@ h2 {
   list-style: none;
 }
 
+.mainContent ul li {
+  color: rgb(var(--secondary-accent));
+  position: relative;
+  padding-left: 30px;
+}
+
+.mainContent ul li:before {
+  position: absolute;
+  display: block;
+  left: 0px;
+  content: "\25B9";
+  font-size: 30px;
+  color: rgb(var(--accent));
+}
+
 .intro {
   padding-bottom: 150px;
   max-width: 1000px;
@@ -418,26 +433,11 @@ h2 {
   padding: 0;
 }
 
-.mainContent ul li {
-  color: rgb(var(--secondary-accent));
-  position: relative;
-  padding-left: 30px;
-}
-
 .aboutMeText ul li {
   margin-bottom: 10px;
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   line-height: 30px;
-}
-
-.mainContent ul li:before {
-  position: absolute;
-  display: block;
-  left: 0px;
-  content: "\25B9";
-  font-size: 30px;
-  color: rgb(var(--accent));
 }
 
 .selfieWrapper {
