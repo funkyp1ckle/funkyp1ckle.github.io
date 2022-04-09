@@ -759,7 +759,7 @@ img:hover {
   border-radius: var(--border-radius);
   padding: 20px;
   margin: 0;
-  font-size: var(--fz-lg);
+  font-size: var(--fz-md);
 }
 
 .projectDescription:nth-of-type(even) {
@@ -778,6 +778,7 @@ img:hover {
   list-style: none;
   margin: 0;
   padding: 15px 0;
+  font-size: var(--fz-sm);
 }
 
 .projectDescription li {
@@ -1082,6 +1083,10 @@ img:hover {
     padding: 0;
     width: 100%;
   }
+   
+  .projectDescription ol {
+    padding: 5px 0;
+  }
 
   .projectContainer:nth-of-type(odd) .projectDescription p {
     right: 0;
@@ -1155,5 +1160,9 @@ img:hover {
 
   .job-container {
     top: var(--tab-height);
+  }
+  
+  .projectContainer .projectDescription {
+    padding: 10px 15px;
   }
 }
