@@ -373,6 +373,11 @@ h2 {
   padding-top: var(--navBar-height);
 }
 
+.mainContent ul {
+  overflow: hidden;
+  list-style: none;
+}
+
 .intro {
   padding-bottom: 150px;
   max-width: 1000px;
@@ -404,22 +409,23 @@ h2 {
   margin-top: 0;
 }
 
-.mainContent ul {
+.aboutMeContent ul {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 50% 10px 50%;
   grid-template-columns: repeat(2, 50%);
   gap: 0 10px;
   padding: 0;
-  overflow: hidden;
-  list-style: none;
 }
 
 .mainContent ul li {
   color: rgb(var(--secondary-accent));
   position: relative;
-  margin-bottom: 10px;
   padding-left: 30px;
+}
+
+.aboutMeText ul li {
+  margin-bottom: 10px;
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   line-height: 30px;
