@@ -119,7 +119,7 @@
 }
 
 html {
-  position: relative;
+  position: fixed;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
