@@ -21,7 +21,7 @@ function initTabbedMenu() {
   backBtn.disabled = true;
 
   nextBtn.addEventListener("click", function nextJob() {
-    if(lastSelectedPanelIdx == tabbedContent.length - 2) {
+    if(lastSelectedPanelIdx == tabbedContent.length - 1) {
       nextBtn.disabled = true;
     } else {
       tabbedContent[lastSelectedPanelIdx].style.display = "none";
