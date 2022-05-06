@@ -21,31 +21,27 @@ function initTabbedMenu() {
   backBtn.disabled = true;
 
   nextBtn.addEventListener("click", function nextJob() {
-    if(lastSelectedPanelIdx == tabbedContent.length - 1) {
+    tabbedContent[lastSelectedPanelIdx].style.display = "none";
+    tabbedPanel[lastSelectedPanelIdx].checked = false;
+    lastSelectedPanelIdx++;
+    tabbedContent[lastSelectedPanelIdx].style.display = "block";
+    tabbedPanel[lastSelectedPanelIdx].checked = true;
+    if(lastSelectedPanelIdx == tabbedContent.length - 1) 
       nextBtn.disabled = true;
-    } else {
-      tabbedContent[lastSelectedPanelIdx].style.display = "none";
-      tabbedPanel[lastSelectedPanelIdx].checked = false;
-      lastSelectedPanelIdx++;
-      tabbedContent[lastSelectedPanelIdx].style.display = "block";
-      tabbedPanel[lastSelectedPanelIdx].checked = true;
-      if(backBtn.disabled)
-        backBtn.disabled = false;
-    }
+    if(backBtn.disabled)
+      backBtn.disabled = false;
   });
   
   backBtn.addEventListener("click", function prevJob() {
+    tabbedContent[lastSelectedPanelIdx].style.display = "none";
+    tabbedPanel[lastSelectedPanelIdx].checked = false;
+    lastSelectedPanelIdx--;
+    tabbedContent[lastSelectedPanelIdx].style.display = "block";
+    tabbedPanel[lastSelectedPanelIdx].checked = true;
     if(lastSelectedPanelIdx == 0) {
       backBtn.disabled = true;
-    } else {
-      tabbedContent[lastSelectedPanelIdx].style.display = "none";
-      tabbedPanel[lastSelectedPanelIdx].checked = false;
-      lastSelectedPanelIdx--;
-      tabbedContent[lastSelectedPanelIdx].style.display = "block";
-      tabbedPanel[lastSelectedPanelIdx].checked = true;
-      if(nextBtn.disabled)
-        nextBtn.disabled = false;
-    }
+    if(nextBtn.disabled)
+      nextBtn.disabled = false;
   });
 }
 
