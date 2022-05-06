@@ -2,15 +2,12 @@ var navBar = document.querySelector(".navBar");
 var expandBtn = document.getElementById("expandBtn");
 
 function initTabbedMenu() {
-  var tabbedMenu = document.querySelector(".tabbed-pane");
-  var tabbedPanel = tabbedMenu
-    .querySelector(".tabbed-pane-inner")
-    .getElementsByTagName("input");
-  var tabbedContent = tabbedMenu
-    .querySelector(".job-container")
-    .getElementsByClassName("job");
-
+  var tabbedPanel = document.querySelector(".tabbed-pane").querySelector(".tabbed-pane-inner").getElementsByTagName("input");
+  var tabbedContent = document.querySelector(".job-container").getElementsByClassName("job");
   var lastSelectedPanelIdx = 0;
+  var backBtn = document.getElementById("back");
+  var nextBtn = document.getElementById("next");
+
   tabbedContent[0].style.display = "block";
 
   for (let i = 0; i < tabbedPanel.length; i++) {
@@ -20,6 +17,36 @@ function initTabbedMenu() {
       lastSelectedPanelIdx = i;
     });
   }
+
+  backBtn.disabled = true;
+
+  nextBtn.addEventListener("click", function nextJob() {
+    if(lastSelectedPanelIdx == tabbedContent.length - 1) {
+      nextBtn.disabled = true;
+    } else {
+      tabbedContent[lastSelectedPanelIdx].style.display = "none";
+      tabbedPanel[lastSelectedPanelIdx].checked = false;
+      lastSelectedPanelIdx++;
+      tabbedContent[lastSelectedPanelIdx].style.display = "block";
+      tabbedPanel[lastSelectedPanelIdx].checked = true;
+      if(backBtn.disabled)
+        backBtn.disabled = false;
+    }
+  });
+  
+  backBtn.addEventListener("click", function prevJob() {
+    if(lastSelectedPanelIdx == 0) {
+      backBtn.disabled = true;
+    } else {
+      tabbedContent[lastSelectedPanelIdx].style.display = "none";
+      tabbedPanel[lastSelectedPanelIdx].checked = false;
+      lastSelectedPanelIdx--;
+      tabbedContent[lastSelectedPanelIdx].style.display = "block";
+      tabbedPanel[lastSelectedPanelIdx].checked = true;
+      if(nextBtn.disabled)
+        nextBtn.disabled = false;
+    }
+  });
 }
 
 expandBtn.addEventListener("click", function expand() {

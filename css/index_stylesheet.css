@@ -520,6 +520,10 @@ img:hover {
   position: relative;
 }
 
+.tabbed-pane-inner button {
+  display: none;
+}
+
 .slider {
   content: "";
   position: absolute;
@@ -1101,61 +1105,91 @@ img:hover {
   }
 
   .tabbed-pane-inner {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
 
+  .tabbed-pane-inner button {
+    position: absolute;
+    display: block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0px;
+    width: var(--tab-height);
+    height: var(--tab-height);
+  }
+
+  .tabbed-pane-inner button:hover {
+    background-color: transparent;
+  }
+
+  #back {
+    left: 0;
+    right: auto;
+  }
+
+  #next {
+    left: auto;
+    right: 0;
+  }
+
+  .tabbed-pane-inner svg {
+    width: 50%;
+    height: 50%;
+  }
+
+  .tabbed-pane-inner button:enabled svg {
+    color: rgb(var(--secondary-accent));
+    transition: color ease-in-out 0.2s;
+  }
+
+  .tabbed-pane-inner button:enabled:hover svg {
+    color: rgb(var(--accent));
+  }
+
+  .tabbed-pane-inner button:disabled svg {
+    color: rgb(var(--light-background));
+  }
+
+  .tabbed-pane-inner button:disabled {
+    cursor: auto;
+  }
+
   .tabbed-pane-inner label {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding: 0 5px 0 5px;
-    width: calc(100% / var(--tab-count));
-    font-size: small;
+    display: none;
+    justify-content:center;
+    align-items:center;
+    cursor: auto;
+  }
+  
+  .tabbed-pane-inner label:hover {
+    background-color: transparent;
+  }
+
+  .tabbed-pane-inner input:checked+label {
+    display: flex;
+    left: var(--tab-height);
+    right: var(--tab-height);
+    width: calc(100% - 2*var(--tab-height));
+    padding: 10px 20px;
+    color: rgb(var(--accent));
   }
 
   .border {
-    top: var(--tab-height);
-    width: 100%;
-    height: 3px;
+    display: none;
   }
 
   .slider {
-    top: var(--tab-height);
-    width: calc(100% / var(--tab-count));
-    height: 3px;
+    display: none;
   }
 
   .exp input#tab1:checked ~ .slider {
     top: var(--tab-height);
     left: calc(0 * (100% / var(--tab-count)));
-  }
-
-  .exp input#tab2:checked ~ .slider {
-    top: var(--tab-height);
-    left: calc(1 * (100% / var(--tab-count)));
-  }
-
-  .exp input#tab3:checked ~ .slider {
-    top: var(--tab-height);
-    left: calc(2 * (100% / var(--tab-count)));
-  }
-
-  .exp input#tab4:checked ~ .slider {
-    top: var(--tab-height);
-    left: calc(3 * (100% / var(--tab-count)));
-  }
-
-  .exp input#tab5:checked ~ .slider {
-    top: var(--tab-height);
-    left: calc(4 * (100% / var(--tab-count)));
-  }
-
-  .exp input#tab6:checked ~ .slider {
-    top: var(--tab-height);
-    left: calc(5 * (100% / var(--tab-count)));
   }
 
   .job-container {
