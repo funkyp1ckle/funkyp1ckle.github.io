@@ -38,7 +38,7 @@ function initTabbedMenu() {
     lastSelectedPanelIdx--;
     tabbedContent[lastSelectedPanelIdx].style.display = "block";
     tabbedPanel[lastSelectedPanelIdx].checked = true;
-    if(lastSelectedPanelIdx == 0) {
+    if(lastSelectedPanelIdx == 0)
       backBtn.disabled = true;
     if(nextBtn.disabled)
       nextBtn.disabled = false;
