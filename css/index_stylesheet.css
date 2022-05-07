@@ -629,7 +629,8 @@ img:hover {
 }
 
 .job h3 {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
   margin: 0;
   padding: 0;
@@ -708,28 +709,35 @@ img:hover {
 
 .projectContainer {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  -webkit-box-align: center;
+  align-items: center;
   margin-bottom: 100px;
 }
 
 .projectPicWrapper {
-  width: 70%;
-  aspect-ratio: 16 / 10;
   position: relative;
-  -webkit-box-shadow: 0 20px 30px -30px black;
-          box-shadow: 0 20px 30px -30px black;
   z-index: 1;
+  grid-area: 1 / 6 / -1 / -1;
+  aspect-ratio: 700 / 438;
+}
+
+.projectPicWrapper:nth-of-type(odd) {
+  grid-column: 1 / 8;
 }
 
 .projectDescription {
   position: relative;
   display: block;
-  width: 50%;
   z-index: 2;
-  margin: auto 0;
+  grid-area: 1 / 1 / -1 / 7;
+}
+
+.projectDescription:nth-of-type(even) {
+  text-align: right;
+  grid-column: 7 / -1;
 }
 
 .projectDescription h4 {
@@ -758,24 +766,11 @@ img:hover {
 
 .projectDescription p {
   position: relative;
-  width: 120%;
   background-color: rgb(var(--light-background));
   border-radius: var(--border-radius);
   padding: 20px;
   margin: 0;
   font-size: var(--fz-md);
-}
-
-.projectDescription:nth-of-type(even) {
-  text-align: right;
-}
-
-.projectDescription:nth-of-type(odd) {
-  text-align: left;
-}
-
-.projectContainer:nth-of-type(odd) .projectDescription p {
-  right: 20%;
 }
 
 .projectDescription ol {
@@ -1054,10 +1049,12 @@ img:hover {
     padding: 0 50px;
   }
 
-  .projectPicWrapper {
-    -webkit-box-shadow: 0 10px 30px -30px black;
-            box-shadow: 0 10px 30px -30px black;
-    width: 100%;
+  .projectContainer {
+    align-items: start;
+  }
+
+  .projectContainer .projectPicWrapper {
+    grid-column: 1 / -1;
   }
 
   .projectPicWrapper .tint {
@@ -1074,9 +1071,7 @@ img:hover {
   }
 
   .projectContainer .projectDescription {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+    grid-column: 1 / -1;
     text-align: left;
     padding: 40px;
   }
@@ -1177,6 +1172,8 @@ img:hover {
     width: calc(100% - 2*var(--tab-height));
     padding: 10px 20px;
     color: rgb(var(--accent));
+    font-size: var(--fz-xxl);
+    font-weight: 500;
   }
 
   .border {
@@ -1196,7 +1193,11 @@ img:hover {
     top: var(--tab-height);
   }
   
+  .projectPicWrapper {
+    aspect-ratio: 468 / 500;
+  }
+
   .projectContainer .projectDescription {
-    padding: 10px 15px;
+    padding: 25px;
   }
 }
