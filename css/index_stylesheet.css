@@ -329,7 +329,6 @@ h2 {
   width: 100%;
   font-size: clamp(26px, 5vw, var(--fz-subheading));
   color: rgb(var(--secondary-accent));
-  white-space: nowrap;
 }
 
 .mainContent h3:before {
