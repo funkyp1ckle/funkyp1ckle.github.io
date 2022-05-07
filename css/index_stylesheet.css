@@ -1192,12 +1192,13 @@ img:hover {
   .job-container {
     top: var(--tab-height);
   }
-  
-  .projectPicWrapper {
-    aspect-ratio: 468 / 700;
-  }
 
   .projectContainer .projectDescription {
     padding: 25px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .projectPicWrapper {
+    aspect-ratio: 468 / 700;
   }
 }
