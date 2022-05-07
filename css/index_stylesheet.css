@@ -690,7 +690,7 @@ img:hover {
 .job ul li {
   color: rgb(var(--dark-slate));
   font-size: var(--fz-lg);
-  padding-bottom: 5px;
+  padding: 5px 0px 5px 30px;
 }
 
 .job ul li:before {
