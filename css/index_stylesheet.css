@@ -481,6 +481,7 @@ img {
   mix-blend-mode: multiply;
   -webkit-filter: grayscale(100%) contrast(1);
   filter: grayscale(100%) contrast(1);
+  object-fit: cover;
 }
 
 img:hover {
