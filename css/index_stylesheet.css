@@ -278,9 +278,6 @@ body {
   max-width: 1600px;
   min-height: calc(100% - var(--navBar-height));
   padding: 0 150px;
-  -webkit-transition: margin-top 0.25s;
-  -o-transition: margin-top 0.25s;
-  transition: margin-top 0.25s;
 }
 
 .mainContent h4 {
@@ -1038,7 +1035,7 @@ img:hover {
   }
 
   .projectPicWrapper .tint {	
-    background: rgb(var(--light-background));	
+    background-color: rgb(var(--light-background));	
     pointer-events: none;	
     -webkit-transition: none;	
     -o-transition: none;	
