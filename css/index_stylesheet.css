@@ -20,6 +20,7 @@ body {
   z-index: 10;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
+  box-shadow: 0 5px 15px black;
   padding-bottom: 0;
   height: var(--navBar-height);
   -webkit-transition: background-color 0.25s ease-in-out;
@@ -41,9 +42,9 @@ body {
 .navBar svg polygon {
   color: rgb(var(--accent));
   fill: rgb(var(--background));
-  -webkit-transition: fill 0.2s ease-in-out;
-  -o-transition: fill 0.2s ease-in-out;
-  transition: fill 0.2s ease-in-out;
+  -webkit-transition: fill 0.5s ease-in-out;
+  -o-transition: fill 0.5s ease-in-out;
+  transition: fill 0.5s ease-in-out;
 }
 
 .navBar svg:hover polygon {
@@ -95,9 +96,9 @@ body {
   cursor: pointer;
   height: auto;
   color: rgb(var(--slate));
-  -webkit-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
+  -webkit-transition: color 0.5s ease-in-out;
+  -o-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
 
 .navLinks li:before {
@@ -452,11 +453,11 @@ h2 {
   height: 100%;
   position: absolute;
   top: 0;
-  background: rgb(var(--accent));
+  background-color: rgb(var(--accent));
   border-radius: var(--border-radius);
-  -webkit-transition: background 0.3s ease-in-out;
-  -o-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .selfieWrapper .tint:after {
@@ -490,10 +491,10 @@ img:hover {
 }
 
 .tint:hover {
-  background: #fff;
+  background-color: white;
 }
 
-.tint:hover:after {
+.aboutMe .tint:hover:after {
   top: 15px;
   left: 15px;
 }
@@ -619,9 +620,6 @@ img:hover {
   height: 100%;
   top: 0;
   left: 0;
-  -webkit-transition: 0.25s ease;
-  -o-transition: 0.25s ease;
-  transition: 0.25s ease;
   color: rgb(var(--accent));
 }
 
@@ -723,6 +721,7 @@ img:hover {
   z-index: 1;
   grid-area: 1 / 6 / -1 / -1;
   aspect-ratio: 700 / 438;
+  box-shadow: 0 20px 15px -15px black;
 }
 
 .projectPicWrapper:nth-of-type(odd) {
@@ -881,9 +880,10 @@ img:hover {
   }
 
   .navBar {
-    -webkit-transition: height 0.2s ease-in-out;
-    -o-transition: height 0.2s ease-in-out;
-    transition: height 0.2s ease-in-out;
+    -webkit-transition: height 0.5s ease-in-out;
+    -o-transition: height 0.5s ease-in-out;
+    transition: height 0.5s ease-in-out;
+    overflow-y: hidden;
   }
 
   .navBar svg {
@@ -894,8 +894,8 @@ img:hover {
   }
 
   .navLinks {
-    display: none;
-    height: 0;
+    display: block;
+    height: calc(var(--expanded-navBar-height) - var(--navBar-height));
     position: relative;
     width: 100%;
     left: 0;
@@ -903,19 +903,15 @@ img:hover {
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
-    -webkit-transition: height 0.2s ease-in-out;
-    -o-transition: height 0.2s ease-in-out;
-    transition: height 0.2s ease-in-out;
-    z-index: 10;
   }
 
   .navLinks ol {
-    position: absolute;
-    display: none;
+    position: relative;
+    display: block;
     left: 0;
     top: 0;
     width: 100%;
-    height: 0;
+    height: 100%;
     margin: 0;
     padding: 0;
   }
@@ -924,9 +920,12 @@ img:hover {
     display: none;
   }
 
-  .navLinks a {
-    display: none;
-    height: 0;
+  .navLinks ol a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: var(--navBar-height);
+    width: 100%;
     border-bottom: 1px solid var(--accent-tint);
     padding-left: 2%;
     margin: 0;
@@ -941,9 +940,10 @@ img:hover {
     background-color: var(--accent-tint);
   }
 
-  .navLinks li {
-    display: none;
-    height: 0;
+  .navLinks ol a li {
+    display: flex;
+    height: 100%;
+    width: 100%;
     list-style-position: inside;
   }
 
@@ -968,7 +968,7 @@ img:hover {
     display: block;
     position: absolute;
     height: 3px;
-    background: rgb(var(--accent));
+    background-color: rgb(var(--accent));
     left: auto;
     right: 0;
     -webkit-transition: 0.25s ease-in-out;
@@ -1017,28 +1017,7 @@ img:hover {
   }
 
   #expandBtn:checked ~ .navLinks {
-    display: block;
     height: 80%;
-  }
-
-  #expandBtn:checked ~ .navLinks ol {
-    display: block;
-    height: 100%;
-  }
-
-  #expandBtn:checked ~ .navLinks ol a {
-    margin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 25%;
-  }
-
-  #expandBtn:checked ~ .navLinks ol a li {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100%;
   }
 
   .selfieWrapper {
@@ -1058,17 +1037,17 @@ img:hover {
     grid-column: 1 / -1;
   }
 
-  .projectPicWrapper .tint {
-    background: rgb(var(--light-background));
-    pointer-events: none;
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none;
+  .projectPicWrapper .tint {	
+    background: rgb(var(--light-background));	
+    pointer-events: none;	
+    -webkit-transition: none;	
+    -o-transition: none;	
+    transition: none;	
   }
-
-  .projectPicWrapper .tint img {
-    -webkit-filter: none;
-    filter: none;
+  	
+  .projectPicWrapper .tint img {	
+    -webkit-filter: none;	
+    filter: none;	
   }
 
   .projectContainer .projectDescription {
@@ -1140,7 +1119,7 @@ img:hover {
 
   .tabbed-pane-inner button:enabled svg {
     color: rgb(var(--secondary-accent));
-    transition: color ease-in-out 0.2s;
+    transition: color ease-in-out 0.5s;
   }
 
   .tabbed-pane-inner button:enabled:hover svg {
@@ -1198,7 +1177,17 @@ img:hover {
     padding: 25px;
   }
 }
-@media only screen and (max-width: 567px) {
+@media only screen and (max-width: 600px) {
+  .projectPicWrapper {
+    aspect-ratio: 468 / 300;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .projectPicWrapper {
+    aspect-ratio: 468 / 400;
+  }
+}
+@media only screen and (max-width: 400px) {
   .projectPicWrapper {
     aspect-ratio: 468 / 700;
   }
