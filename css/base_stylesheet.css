@@ -4,7 +4,7 @@
     url(../fonts/Calibre-Regular.woff) format("woff");
   font-weight: 400;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -13,7 +13,7 @@
     url(../fonts/Calibre-Medium.woff) format("woff");
   font-weight: 500;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -22,7 +22,7 @@
     url(../fonts/Calibre-Semibold.woff) format("woff");
   font-weight: 600;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -31,7 +31,7 @@
     url(../fonts/Calibre-RegularItalic.woff) format("woff");
   font-weight: 400;
   font-style: italic;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -40,7 +40,7 @@
     url(../fonts/Calibre-MediumItalic.woff) format("woff");
   font-weight: 500;
   font-style: italic;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -49,7 +49,7 @@
     url(../fonts/Calibre-SemiboldItalic.woff) format("woff");
   font-weight: 600;
   font-style: italic;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -58,7 +58,7 @@
     url(../fonts/SFMono-Regular.woff) format("woff");
   font-weight: 400;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -67,7 +67,7 @@
     url(../fonts/SFMono-Semibold.woff) format("woff");
   font-weight: 600;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -77,7 +77,7 @@
       format("woff");
   font-weight: 400;
   font-style: italic;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -86,7 +86,7 @@
     url(../fonts/SFMono-SemiboldItalic.woff) format("woff");
   font-weight: 600;
   font-style: italic;
-  font-display: auto;
+  font-display: swap;
 }
 
 :root {
