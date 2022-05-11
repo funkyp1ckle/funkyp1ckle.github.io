@@ -23,9 +23,9 @@ body {
   box-shadow: 0 5px 15px black;
   padding-bottom: 0;
   height: var(--navBar-height);
-  -webkit-transition: background-color 0.25s ease-in-out;
-  -o-transition: background-color 0.25s ease-in-out;
-  transition: background-color 0.25s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .navBar svg {
@@ -96,9 +96,9 @@ body {
   cursor: pointer;
   height: auto;
   color: rgb(var(--slate));
-  -webkit-transition: color 0.5s ease-in-out;
-  -o-transition: color 0.5s ease-in-out;
-  transition: color 0.5s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .navLinks li:before {
@@ -877,9 +877,9 @@ img:hover {
   }
 
   .navBar {
-    -webkit-transition: height 0.5s ease-in-out;
-    -o-transition: height 0.5s ease-in-out;
-    transition: height 0.5s ease-in-out;
+    -webkit-transition: height 0.3s ease-in-out;
+    -o-transition: height 0.3s ease-in-out;
+    transition: height 0.3s ease-in-out;
     overflow-y: hidden;
   }
 
@@ -968,9 +968,9 @@ img:hover {
     background-color: rgb(var(--accent));
     left: auto;
     right: 0;
-    -webkit-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
 
   .expand span:nth-child(1) {
