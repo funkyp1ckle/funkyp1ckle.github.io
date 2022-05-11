@@ -225,7 +225,7 @@ ul {
 footer {
   font-family: var(--font-mono);
   font-size: var(--fz-xxs);
-  color: rgb(var(--dark-slate));
+  color: rgb(var(--slate));
   text-align: center;
   min-height: 35px;
 }
