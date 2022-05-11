@@ -968,9 +968,9 @@ img:hover {
     background-color: rgb(var(--accent));
     left: auto;
     right: 0;
-    -webkit-transition: 0.25s ease-in-out;
-    -o-transition: 0.25s ease-in-out;
-    transition: 0.25s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
   }
 
   .expand span:nth-child(1) {
