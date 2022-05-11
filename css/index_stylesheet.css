@@ -59,7 +59,6 @@ body {
   display: block;
   position: absolute;
   right: 2%;
-  opacity: 1;
   height: 100%;
 }
 
@@ -68,18 +67,19 @@ body {
   display: -ms-inline-flexbox;
   display: inline-flex;
   height: 100%;
-  opacity: 1;
   margin: 0;
+  padding: 0;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  list-style: none;
 }
 
-.navLinks a {
-  margin: 0 20px 0 0;
+.navLinks ol li {
+  margin-right: 20px;
 }
 
-.navLinks li {
+.navLinks ol li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,7 +101,7 @@ body {
   transition: color 0.3s ease-in-out;
 }
 
-.navLinks li:before {
+.navLinks ol li a:before {
   position: relative;
   counter-increment: sectionLink;
   content: "0" counter(sectionLink) ".";
@@ -109,11 +109,7 @@ body {
   color: rgb(var(--accent));
 }
 
-.navLinks a:last-child {
-  margin-right: 20px;
-}
-
-.navLinks a:hover li {
+.navLinks ol li:hover a {
   color: rgb(var(--accent));
 }
 
@@ -917,14 +913,13 @@ img:hover {
     display: none;
   }
 
-  .navLinks ol a {
+  .navLinks ol li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     height: var(--navBar-height);
     width: 100%;
     border-bottom: 1px solid var(--accent-tint);
-    padding-left: 2%;
     margin: 0;
     -webkit-transition: background-color 0.5s ease-in-out,
       color 0.5s ease-in-out;
@@ -933,15 +928,15 @@ img:hover {
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
   }
 
-  .navLinks a:hover {
+  .navLinks ol li:hover {
     background-color: var(--accent-tint);
   }
 
-  .navLinks ol a li {
+  .navLinks ol li a {
     display: flex;
     height: 100%;
     width: 100%;
-    list-style-position: inside;
+    padding-left: 2%;
   }
 
   .expand {
