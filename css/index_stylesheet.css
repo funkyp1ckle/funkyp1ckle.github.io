@@ -384,6 +384,7 @@ h2 {
   left: 0px;
   content: "\25B9";
   font-size: 30px;
+  line-height: 28px;
   color: rgb(var(--accent));
 }
 
@@ -688,6 +689,7 @@ img:hover {
 
 .job ul li:before {
   margin-top: -6px;
+  line-height: 38px;
 }
 
 .projects {
