@@ -376,6 +376,7 @@ h2 {
   color: rgb(var(--secondary-accent));
   position: relative;
   padding-left: 30px;
+  line-height: 30px;
 }
 
 .mainContent ul li:before {
@@ -383,8 +384,7 @@ h2 {
   display: block;
   left: 0px;
   content: "\25B9";
-  margin-top: -2px;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 30px;
   color: rgb(var(--accent));
 }
@@ -432,8 +432,7 @@ h2 {
 .aboutMeText ul li {
   margin-bottom: 10px;
   font-family: var(--font-mono);
-  font-size: var(--fz-xs);
-  line-height: 30px;
+  font-size: var(--fz-sm);
 }
 
 .selfieWrapper {
