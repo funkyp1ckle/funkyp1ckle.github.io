@@ -432,6 +432,8 @@ h2 {
 .aboutMeText ul li {
   font-family: var(--font-mono);
   font-size: var(--fz-sm);
+  display:flex;
+  align-items:center;
 }
 
 .selfieWrapper {
