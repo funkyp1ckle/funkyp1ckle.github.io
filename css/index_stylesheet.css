@@ -425,12 +425,11 @@ h2 {
   display: grid;
   -ms-grid-columns: 50% 10px 50%;
   grid-template-columns: repeat(2, 50%);
-  gap: 0 10px;
+  gap: 10px;
   padding: 0;
 }
 
 .aboutMeText ul li {
-  margin-bottom: 10px;
   font-family: var(--font-mono);
   font-size: var(--fz-sm);
 }
